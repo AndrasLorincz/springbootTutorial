@@ -1,2 +1,6 @@
 eu\pontsystems\tutorial\controller\IndexController.class
+eu\pontsystems\tutorial\service\UserService.class
+eu\pontsystems\tutorial\entity\User.class
+eu\pontsystems\tutorial\repository\UserRepository.class
+eu\pontsystems\tutorial\service\JobService.class
 eu\pontsystems\tutorial\TutorialApplication.class

@@ -1,42 +1,38 @@
 package eu.pontsystems.tutorial.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import eu.pontsystems.tutorial.entity.User;
 import eu.pontsystems.tutorial.service.UserService;
 
-@Controller
+@RestController
 public class IndexController {
 	
 	@Autowired
 	private UserService us;
 
-	@RequestMapping(method = RequestMethod.GET , value = "index")
-	public String view() {
-		return "index";
+	@GetMapping(value = "/index")
+//	@RequestMapping(method = RequestMethod.GET , value = "index")
+	public ModelAndView view() {
+		ModelAndView mav = new ModelAndView("index");
+		return mav;
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.POST , value = "mentes")
-	public String mentes(User user) {
+	@PostMapping(value = "/mentes")
+	//@RequestMapping(method = RequestMethod.POST , value = "/mentes")
+	public ModelAndView mentes(User user) {
 		
 		//User user=new User(name);
 		us.mentes(user);
-		return "index";
+		ModelAndView mav = new ModelAndView("index");
+		return mav;
 		
 	}
 	
-	@RequestMapping(method = RequestMethod.GET , value="kiir")
-	public String kiir(Model model) {
-		List<User> osszUser=us.osszesUser();
-		model.addAttribute("userek",osszUser);
-		return "osszesUser";
-		
-	}
+	
 }

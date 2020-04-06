@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Főoldal</title>
 </head>
 <body>
 <h2>Tutorial Form</h2>

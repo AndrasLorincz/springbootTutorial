@@ -1,4 +1,4 @@
-package eu.pontsystems.tutorial.service;
+package eu.pontsystems.tutorial.job;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -6,8 +6,7 @@ import java.time.format.DateTimeFormatter;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-@Component
-public class JobService {
+public class PrintJob {
 	
 	@Scheduled(cron = "${tutorial.profile.cron}")
 	public void job1() {

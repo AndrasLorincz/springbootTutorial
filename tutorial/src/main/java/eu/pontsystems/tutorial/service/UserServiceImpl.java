@@ -9,7 +9,7 @@ import eu.pontsystems.tutorial.entity.User;
 import eu.pontsystems.tutorial.repository.UserRepository;
 
 @Service
-public class UserService {
+public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	private UserRepository ur;

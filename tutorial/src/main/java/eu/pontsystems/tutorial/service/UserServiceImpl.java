@@ -3,6 +3,9 @@ package eu.pontsystems.tutorial.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import eu.pontsystems.tutorial.entity.User;
@@ -19,8 +22,9 @@ public class UserServiceImpl implements UserService{
 	}
 	
 	public List<User> osszesUser(){
-		
-		return ur.findAll();
+		Pageable firstPageWithTwoElements = PageRequest.of(0, 2);
+		Page<User> osszesUser=ur.findAll(firstPageWithTwoElements);
+		return osszesUser.getContent();
 		
 	}
 	

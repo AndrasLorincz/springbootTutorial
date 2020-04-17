@@ -11,10 +11,13 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Tutorial-Főoldal</title>
+  <title>Tutorial-${pageName}</title>
 
   <!-- Bootstrap core CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+   <!-- Bootstrap core JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 </head>
 
@@ -23,7 +26,7 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Főoldal</a>
+      <a class="navbar-brand" href="#">${pageName}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -38,7 +41,7 @@
             <a class="nav-link" href="userMentes">User mentés</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="kiir?page=0">User lista</a>
+            <a class="nav-link" href="kiir?page=0&sort=id">User lista</a>
           </li>
         </ul>
       </div>
@@ -48,9 +51,7 @@
   <!-- Page Content -->
 <jsp:include page="${viewName}.jsp"></jsp:include>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  
 
 </body>
 

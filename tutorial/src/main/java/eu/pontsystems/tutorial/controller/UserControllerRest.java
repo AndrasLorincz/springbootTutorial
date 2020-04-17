@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
@@ -18,23 +21,24 @@ import eu.pontsystems.tutorial.service.UserServiceImpl;
 @RestController
 public class UserControllerRest {
 	
-//	@Autowired
-//	private UserServiceImpl us;
-//
-//	@GetMapping(value = "/api/kiir")
-//	//@RequestMapping(method = RequestMethod.GET , value="/kiir")
-//	public List<User> kiir(Model model) {
-//		List<User> osszUser=us.osszesUser();
-//		model.addAttribute("userek",osszUser);
-//		return osszUser;
-//		
-//	}
-//	
-//	@PostMapping(value = "/api/mentes")
-//	public ResponseEntity<String> mentes(Model model,User user) {
-//		
-//		us.mentes(user);
-//		return new ResponseEntity<String>(HttpStatus.ACCEPTED);
-//		
-//	}
+	@Autowired
+	private UserServiceImpl us;
+
+	@GetMapping(value = "/api/kiir")
+	//@RequestMapping(method = RequestMethod.GET , value="/kiir")
+	public ResponseEntity<List<User>> kiir(Model model,@RequestParam Integer page,@RequestParam String sort) {
+		Pageable ElementsPerPage = PageRequest.of(page, 5,Sort.by(sort));
+		Page<User> osszUserPage=us.osszesUser(ElementsPerPage);
+		List<User> osszUser=osszUserPage.getContent();
+		return new ResponseEntity<List<User>>(osszUser,HttpStatus.ACCEPTED);
+		
+	}
+	
+	@PostMapping(value = "/api/mentes")
+	public ResponseEntity<String> mentes(Model model,User user) {
+		
+		us.mentes(user);
+		return new ResponseEntity<String>(HttpStatus.ACCEPTED);
+		
+	}
 }

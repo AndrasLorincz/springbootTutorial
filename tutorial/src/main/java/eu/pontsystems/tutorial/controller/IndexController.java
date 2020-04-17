@@ -20,6 +20,7 @@ public class IndexController {
 	@GetMapping(value = {"/","index"})
 	public String view(Model model) {
 		model.addAttribute("viewName","main");
+		model.addAttribute("pageName","Főoldal");
 		return "index";
 		
 	}
@@ -27,6 +28,7 @@ public class IndexController {
 	@GetMapping(value = "/userMentes")
 	public String userMentesView(Model model) {
 		model.addAttribute("viewName","saveUser");
+		model.addAttribute("pageName","User mentés");
 		return "index";
 		
 	}

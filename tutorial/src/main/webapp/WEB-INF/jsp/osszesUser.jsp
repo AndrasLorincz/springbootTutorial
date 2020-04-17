@@ -6,7 +6,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <th scope="col">#id</th>
       <th scope="col">Name</th>
       <th scope="col">Age</th>
       <th scope="col">Email</th>
@@ -23,13 +23,30 @@
 	</c:forEach>
 	</tbody>
 </table>
-<div class="panel-footer">
- ${number +1 }.Oldal , ${size } / ${totalElements} elem
- 	<ul class="pagination">
- 		<c:forEach begin="0" end="${totalPages-1}" var="page">
- 			<li class="page-item">
- 				<a class="page-link" href="/tutorial/kiir?page=${page}&size=${size}">${page+1}</a>
- 			</li>
- 		</c:forEach>
- 	</ul>
-</div>                                              
+
+<div>
+	 ${number +1 }.Oldal , ${size } / ${totalElements} elem
+	
+ 		<ul class="pagination">
+ 			<c:forEach begin="0" end="${totalPages-1}" var="page">
+ 				<li class="page-item">
+ 					<a class="page-link" href="/tutorial/kiir?page=${page}&sort=${sort}">${page+1}</a>
+ 				</li>
+ 			</c:forEach>
+		</ul>
+</div>
+
+ <div>
+  <label for="cars">Rendezés:</label>
+
+<form action="kiir" method="get">
+<input type="hidden" name="page" value="${number}">
+<select name="sort" onchange='this.form.submit()'>
+  <option value="id">id</option>
+  <option value="name">Név</option>
+  <option value="age">Kor</option>
+  <option value="email">Email</option>
+</select>
+</form>
+  
+</div>                                           

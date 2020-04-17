@@ -27,10 +27,32 @@ public class UserController {
 
 	@GetMapping(value = "/kiir")
 	//@RequestMapping(method = RequestMethod.GET , value="/kiir")
-	public String kiir(Model model) {
-		List<User> osszUser=us.osszesUser();
-		model.addAttribute("userek",osszUser);
+	public String kiir(Model model,@RequestParam Integer page) {
+		Pageable firstPageWithTwoElements = PageRequest.of(page, 5);
+		Page<User> osszUser=us.osszesUser(firstPageWithTwoElements);
+		model.addAttribute("userek",osszUser.getContent());
 		model.addAttribute("viewName","osszesUser");
+		model.addAttribute("number",osszUser.getNumber());
+		model.addAttribute("totalPages",osszUser.getTotalPages());
+		model.addAttribute("totalElements",osszUser.getTotalElements());
+		model.addAttribute("size",osszUser.getSize());
+		System.out.println(osszUser);
+		return "index";
+		
+	}
+	
+	@GetMapping(value = "/refresh")
+	//@RequestMapping(method = RequestMethod.GET , value="/kiir")
+	public String refresh(Model model,Pageable pageable) {
+		Pageable firstPageWithTwoElements = PageRequest.of(0, 5);
+		Page<User> osszUser=us.osszesUser(firstPageWithTwoElements);
+		model.addAttribute("userek",osszUser.getContent());
+		model.addAttribute("viewName","osszesUser");
+		model.addAttribute("number",osszUser.getNumber());
+		model.addAttribute("totalPages",osszUser.getTotalPages());
+		model.addAttribute("totalElements",osszUser.getTotalElements());
+		model.addAttribute("size",osszUser.getSize());
+		System.out.println(osszUser);
 		return "index";
 		
 	}

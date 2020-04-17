@@ -38,7 +38,7 @@
             <a class="nav-link" href="userMentes">User mentés</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="kiir">User lista</a>
+            <a class="nav-link" href="kiir?page=0">User lista</a>
           </li>
         </ul>
       </div>

@@ -21,12 +21,19 @@ public class UserServiceImpl implements UserService{
 		ur.save(user);
 	}
 	
-	public List<User> osszesUser(){
-		Pageable firstPageWithTwoElements = PageRequest.of(0, 2);
-		Page<User> osszesUser=ur.findAll(firstPageWithTwoElements);
-		return osszesUser.getContent();
+//	public List<User> osszesUser(){
+//		Pageable firstPageWithTwoElements = PageRequest.of(0, 2);
+//		Page<User> osszesUser=ur.findAll(firstPageWithTwoElements);
+//		return osszesUser.getContent();
+//		
+//	}
+	
+	public Page<User> osszesUser(Pageable pageable){
+		
+		return ur.findAll(pageable);
 		
 	}
+	
 	
 	
 }

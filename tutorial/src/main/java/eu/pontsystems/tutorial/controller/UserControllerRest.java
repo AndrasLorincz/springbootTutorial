@@ -18,23 +18,23 @@ import eu.pontsystems.tutorial.service.UserServiceImpl;
 @RestController
 public class UserControllerRest {
 	
-	@Autowired
-	private UserServiceImpl us;
-
-	@GetMapping(value = "/api/kiir")
-	//@RequestMapping(method = RequestMethod.GET , value="/kiir")
-	public List<User> kiir(Model model) {
-		List<User> osszUser=us.osszesUser();
-		model.addAttribute("userek",osszUser);
-		return osszUser;
-		
-	}
-	
-	@PostMapping(value = "/api/mentes")
-	public ResponseEntity<String> mentes(Model model,User user) {
-		
-		us.mentes(user);
-		return new ResponseEntity<String>(HttpStatus.ACCEPTED);
-		
-	}
+//	@Autowired
+//	private UserServiceImpl us;
+//
+//	@GetMapping(value = "/api/kiir")
+//	//@RequestMapping(method = RequestMethod.GET , value="/kiir")
+//	public List<User> kiir(Model model) {
+//		List<User> osszUser=us.osszesUser();
+//		model.addAttribute("userek",osszUser);
+//		return osszUser;
+//		
+//	}
+//	
+//	@PostMapping(value = "/api/mentes")
+//	public ResponseEntity<String> mentes(Model model,User user) {
+//		
+//		us.mentes(user);
+//		return new ResponseEntity<String>(HttpStatus.ACCEPTED);
+//		
+//	}
 }

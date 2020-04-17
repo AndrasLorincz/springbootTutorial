@@ -57,6 +57,7 @@ public class PopulateDb implements ApplicationListener<ContextRefreshedEvent> {
 		albert.setName("Albert");
 		albert.setEmail("aaa@bb.hu");
 		albert.setAge(rd.nextInt(99)+1);
+		
 		List<User> dummys=new ArrayList<User>();
 		
 		dummys.add(sanyi);

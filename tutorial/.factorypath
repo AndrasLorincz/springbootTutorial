@@ -70,4 +70,7 @@
     <factorypathentry kind="VARJAR" id="M2_REPO/org/eclipse/jdt/ecj/3.18.0/ecj-3.18.0.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/org/projectlombok/lombok/1.18.10/lombok-1.18.10.jar" enabled="true" runInBatchMode="false"/>
     <factorypathentry kind="VARJAR" id="M2_REPO/javax/servlet/jstl/1.2/jstl-1.2.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/webjars/bootstrap/4.0.0/bootstrap-4.0.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/webjars/jquery/3.0.0/jquery-3.0.0.jar" enabled="true" runInBatchMode="false"/>
+    <factorypathentry kind="VARJAR" id="M2_REPO/org/webjars/npm/popper.js/1.11.1/popper.js-1.11.1.jar" enabled="true" runInBatchMode="false"/>
 </factorypath>

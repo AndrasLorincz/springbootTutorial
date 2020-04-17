@@ -47,7 +47,7 @@
   <option value="email">Email</option>
 </select>
 <label for="number">Listázottak száma:</label><input type="number" name="count"> 
-<input type="hidden" name="page" value="${number}">
+<input type="hidden" name="page" value="0">
 <input type="submit" value="Szűrés">
 </form>
   

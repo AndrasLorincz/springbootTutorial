@@ -29,8 +29,16 @@ public class UserController {
 			count=1;
 		}
 		
+		
 		Pageable ElementsPerPage = PageRequest.of(page, count,Sort.by(sort));
 		Page<User> osszUser=us.osszesUser(ElementsPerPage);
+		
+		//alternatív megoldás hogy lekezelje ha szűrés után nyobb oldalon áll a felhasználó mint amennyi van
+//		if (page>osszUser.getTotalPages()) {
+//			ElementsPerPage = PageRequest.of(0, count,Sort.by(sort));
+//			osszUser=us.osszesUser(ElementsPerPage);
+//		}
+		
 		model.addAttribute("viewName","osszesUser");
 		model.addAttribute("pageName","User Lista");
 		model.addAttribute("sort",sort);

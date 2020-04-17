@@ -30,23 +30,25 @@
  		<ul class="pagination">
  			<c:forEach begin="0" end="${totalPages-1}" var="page">
  				<li class="page-item">
- 					<a class="page-link" href="/tutorial/kiir?page=${page}&sort=${sort}">${page+1}</a>
+ 					<a class="page-link" href="/tutorial/kiir?page=${page}&sort=${sort}&count=${count}">${page+1}</a>
  				</li>
  			</c:forEach>
 		</ul>
 </div>
 
  <div>
-  <label for="cars">Rendezés:</label>
 
 <form action="kiir" method="get">
-<input type="hidden" name="page" value="${number}">
-<select name="sort" onchange='this.form.submit()'>
+<label for="sort">Rendezés:</label>
+<select name="sort">
   <option value="id">id</option>
   <option value="name">Név</option>
   <option value="age">Kor</option>
   <option value="email">Email</option>
 </select>
+<label for="number">Listázottak száma:</label><input type="number" name="count"> 
+<input type="hidden" name="page" value="${number}">
+<input type="submit" value="Szűrés">
 </form>
   
 </div>                                           

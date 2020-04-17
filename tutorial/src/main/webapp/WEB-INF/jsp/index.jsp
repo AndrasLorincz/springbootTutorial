@@ -41,7 +41,7 @@
             <a class="nav-link" href="userMentes">User mentés</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="kiir?page=0&sort=id">User lista</a>
+            <a class="nav-link" href="kiir?page=0&count=3&sort=id">User lista</a>
           </li>
         </ul>
       </div>

@@ -26,8 +26,11 @@ public class UserControllerRest {
 
 	@GetMapping(value = "/api/kiir")
 	//@RequestMapping(method = RequestMethod.GET , value="/kiir")
-	public ResponseEntity<List<User>> kiir(Model model,@RequestParam Integer page,@RequestParam String sort) {
-		Pageable ElementsPerPage = PageRequest.of(page, 5,Sort.by(sort));
+	public ResponseEntity<List<User>> kiir(Model model,@RequestParam Integer page,@RequestParam String sort,@RequestParam(defaultValue="1") Integer count) {
+		if (count<1 ) {
+			count=1;
+		}
+		Pageable ElementsPerPage = PageRequest.of(page, count,Sort.by(sort));
 		Page<User> osszUserPage=us.osszesUser(ElementsPerPage);
 		List<User> osszUser=osszUserPage.getContent();
 		return new ResponseEntity<List<User>>(osszUser,HttpStatus.ACCEPTED);

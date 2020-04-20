@@ -13,11 +13,19 @@
 
   <title>Tutorial-${pageName}</title>
 
-  <!-- Bootstrap core CSS -->
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap core CSS https://maxcdn.bootstrapcdn.com -->
+  <link href="webjars/bootstrap/4.4.1-1/css/bootstrap.min.css" rel="stylesheet">
    <!-- Bootstrap core JavaScript -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="webjars/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+<!--   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+
+<script>
+$(document).ready(function(){
+  $("p").click(function(){
+    $(this).hide();
+  });
+});
+</script>
 
 </head>
 

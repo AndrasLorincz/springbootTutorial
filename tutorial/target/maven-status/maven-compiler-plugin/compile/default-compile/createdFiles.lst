@@ -1,6 +1,12 @@
+eu\pontsystems\tutorial\entity\User.class
+eu\pontsystems\tutorial\controller\UserController.class
+eu\pontsystems\tutorial\controller\UserControllerRest.class
+eu\pontsystems\tutorial\config\SchedulerConfig.class
+eu\pontsystems\tutorial\config\WebConfig.class
+eu\pontsystems\tutorial\TutorialApplication.class
+eu\pontsystems\tutorial\service\UserServiceImpl.class
 eu\pontsystems\tutorial\controller\IndexController.class
 eu\pontsystems\tutorial\service\UserService.class
-eu\pontsystems\tutorial\entity\User.class
 eu\pontsystems\tutorial\repository\UserRepository.class
-eu\pontsystems\tutorial\service\JobService.class
-eu\pontsystems\tutorial\TutorialApplication.class
+eu\pontsystems\tutorial\job\PrintJob.class
+eu\pontsystems\tutorial\bootstrap\PopulateDb.class

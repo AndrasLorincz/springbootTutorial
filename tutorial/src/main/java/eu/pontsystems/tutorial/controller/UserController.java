@@ -23,7 +23,6 @@ public class UserController {
 	@GetMapping(value = "/kiir")
 	public String kiir(Model model,@RequestParam Integer page,@RequestParam String sort,@RequestParam(defaultValue="1") Integer count) {
 		
-		System.out.println(count);
 		
 		if (count<1 ) {
 			count=1;
@@ -38,7 +37,7 @@ public class UserController {
 //			ElementsPerPage = PageRequest.of(0, count,Sort.by(sort));
 //			osszUser=us.osszesUser(ElementsPerPage);
 //		}
-		
+	
 		model.addAttribute("viewName","osszesUser");
 		model.addAttribute("pageName","User Lista");
 		model.addAttribute("sort",sort);

@@ -25,15 +25,15 @@ public class UserControllerRest {
 	private UserServiceImpl us;
 
 	@GetMapping(value = "/api/kiir")
-	//@RequestMapping(method = RequestMethod.GET , value="/kiir")
-	public ResponseEntity<List<User>> kiir(Model model,@RequestParam Integer page,@RequestParam String sort,@RequestParam(defaultValue="1") Integer count) {
+	//@RequestMapping(method = RequestMethod.GET , value="/kiir") List<User>
+	public List<User> kiir(Model model,@RequestParam(defaultValue = "0") Integer page,@RequestParam(defaultValue = "id") String sort,@RequestParam(defaultValue="1") Integer count) {
 		if (count<1 ) {
 			count=1;
 		}
 		Pageable ElementsPerPage = PageRequest.of(page, count,Sort.by(sort));
 		Page<User> osszUserPage=us.osszesUser(ElementsPerPage);
 		List<User> osszUser=osszUserPage.getContent();
-		return new ResponseEntity<List<User>>(osszUser,HttpStatus.ACCEPTED);
+		return osszUser;
 		
 	}
 	
@@ -41,7 +41,7 @@ public class UserControllerRest {
 	public ResponseEntity<String> mentes(Model model,User user) {
 		
 		us.mentes(user);
-		return new ResponseEntity<String>(HttpStatus.ACCEPTED);
+		return new ResponseEntity<String>(HttpStatus.OK);
 		
 	}
 }

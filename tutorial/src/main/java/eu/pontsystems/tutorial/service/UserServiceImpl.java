@@ -24,6 +24,8 @@ public class UserServiceImpl implements UserService{
 		return ur.findAll(pageable);
 		
 	}
+
+
 	
 	
 	

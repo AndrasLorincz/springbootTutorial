@@ -7,6 +7,7 @@ import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import eu.pontsystems.tutorial.entity.User;
@@ -21,17 +22,25 @@ public class PopulateDb implements ApplicationListener<ContextRefreshedEvent> {
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
 		
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		
 		Random rd=new Random();
 		
 		User sanyi=new User();
 		sanyi.setName("sanyi");
 		sanyi.setEmail("aa@bb.hu");
 		sanyi.setAge(rd.nextInt(99)+1);
+		sanyi.setPassword(encoder.encode("123"));
+		sanyi.setRoles("ROLE_USER,ROLE_ADMIN");
+		sanyi.setActive(true);
 		
 		User zoli=new User();
 		zoli.setName("zoli");
 		zoli.setEmail("aa@bb.hu");
 		zoli.setAge(rd.nextInt(99)+1);
+		zoli.setPassword(encoder.encode("123abc"));
+		zoli.setRoles("ROLE_GUEST");
+		zoli.setActive(true);
 		
 		User bela=new User();
 		bela.setName("Béla");

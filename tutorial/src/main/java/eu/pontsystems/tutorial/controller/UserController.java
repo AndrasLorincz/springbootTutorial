@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,6 +21,7 @@ public class UserController {
 	@Autowired
 	private UserServiceImpl us;
 
+	
 	@GetMapping(value = "/kiir")
 	public String kiir(Model model,@RequestParam Integer page,@RequestParam String sort,@RequestParam(defaultValue="1") Integer count) {
 		

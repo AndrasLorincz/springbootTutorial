@@ -51,6 +51,9 @@ $(document).ready(function(){
           <li class="nav-item">
             <a class="nav-link" href="kiir?page=0&count=3&sort=id">User lista</a>
           </li>
+          <li class="nav-item">
+            <a href="<c:url value="/logout" />">Logout</a>
+          </li>
         </ul>
       </div>
     </div>
